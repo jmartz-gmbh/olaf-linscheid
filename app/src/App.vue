@@ -32,7 +32,7 @@ export default {
 
 <style lang="less">
 .app {
-  background: linear-gradient(-45deg, black, red);
+  background: linear-gradient(-45deg, blue, black);
   background-size: auto;
 }
 </style>
