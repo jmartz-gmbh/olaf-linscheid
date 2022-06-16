@@ -6,7 +6,16 @@
       ></span
     >
     <nav class="mt-2">
-      <ul class="flex justify-between text-white">
+      <ul class="flex justify-between text-white space-x-5">
+        <li>
+          <router-link to="/gas">Gas</router-link>
+        </li>
+        <li>
+          <router-link to="/wasser">Wasser</router-link>
+        </li>
+        <li>
+          <router-link to="/bad">Bad</router-link>
+        </li>
         <li>
           <router-link to="/impressum">Impressum</router-link>
         </li>
