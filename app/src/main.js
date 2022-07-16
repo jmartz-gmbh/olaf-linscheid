@@ -1,7 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import store from "./store";
 import routes from "./routes";
+import { createPinia } from "pinia";
 
 import plausible from "./plugins/plausible";
 
@@ -17,14 +17,17 @@ import {
   faFireFlameSimple,
   faToilet,
   faWater,
+  faTimes,
+  faInfo,
+  faEdit,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 const app = createApp(App);
-library.add(faFireFlameSimple, faWater, faToilet);
+library.add(faFireFlameSimple, faWater, faToilet, faEdit, faTimes, faInfo);
 app.component("fa", FontAwesomeIcon);
 
 app.use(plausible, plausibleOptions);
 app.use(routes);
-app.use(store);
+app.use(createPinia());
 app.mount("#app");

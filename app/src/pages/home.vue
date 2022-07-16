@@ -24,118 +24,31 @@
           alt=""
           class="w-32 rounded-full mx-auto mt-5"
         />
-        <h2 class="font-bold">Jonathan Martz</h2>
+        <h2 class="font-bold mt-2">Olaf Linscheid</h2>
         <p class="text-sm">0174 12345678</p>
+
         <button
           class="bg-gray-400 px-2 py-2 mt-2 text-white border border-black"
-          @click="window.location.href = 'https://github.com'"
+          @click="call('004901745141698')"
         >
-          Jetzt Anrufen
+          Jetzt anrufen
         </button>
       </div>
     </div>
-    <div class="grid grid-cols-6 mt-5">
-      <div class="col-span-6">
-        <div
-          class="text-center mt-5 text-xl border-[#128C7E] border-2 px-2 py-2 rounded-lg"
-        >
-          Jetzt auch per
-          <a href="https://wa.me/00490174123456" class="text-[#128C7E]"
-            >Whatsapp</a
-          >
-          anschreiben und Termin vereinbaren.
-        </div>
-      </div>
-    </div>
-    <div class="grid grid-cols-6 mt-10">
-      <div class="col-span-6 md:col-span-2 text-center mt-10">
-        <router-link to="/gas">
-          <fa icon="fire-flame-simple" class="fa-4x" />
-        </router-link>
-        <h2 class="mt-5">Gas</h2>
-        <button class="bg-gray-400 border text-white border-black px-2 py-2 mt-2" @click="$router.push('/gas')">
-          mehr Informationen
-        </button>
-      </div>
-      <div class="col-span-6 md:col-span-2 text-center mt-10">
-        <router-link to="/wasser">
-          <fa icon="water" class="fa-4x" />
-        </router-link>
-        <h2 class="mt-5">Wasser</h2>
-        <button class="bg-gray-400 border text-white border-black px-2 py-2 mt-2" @click="$router.push('/wasser')">
-          mehr Informationen
-        </button>
-      </div>
-      <div class="col-span-6 md:col-span-2 text-center mt-10">
-        <router-link to="/bad"><fa icon="toilet" class="fa-4x" /></router-link>
-        <h2 class="mt-5">Bad</h2>
-        <button class="bg-gray-400 border text-white border-black px-2 py-2 mt-2" @click="$router.push('/bad')">
-          mehr Informationen
-        </button>
-      </div>
-    </div>
+    <note-whatsapp></note-whatsapp>
+    <icon-bar></icon-bar>
     <div class="col-span-6 mt-10">
-      <h2 class="text-lg font-bold">Team:</h2>
-      <div class="grid grid-cols-8">
-        <div class="col-span-8 md:col-span-2 text-center">
-          <div class="card bg-white px-2 py-2">
-            <img
-              src="https://avatars.githubusercontent.com/u/20771653?v=4"
-              alt=""
-              class="w-16 rounded-full mx-auto"
-            />
-            <h2 class="font-bold text-lg">Jonathan Martz</h2>
-            <p class="text-sm">
-              Türsteher Jonathan lässt nur ordentliche Leute rein
-            </p>
-          </div>
-        </div>
-        <div class="col-span-8 md:col-span-2 text-center">
-          <div class="card bg-white px-2 py-2">
-            <img
-              src="https://avatars.githubusercontent.com/u/20771653?v=4"
-              alt=""
-              class="w-16 rounded-full mx-auto"
-            />
-            <h2 class="font-bold text-lg">Jonathan Martz</h2>
-            <p class="text-sm">
-              Türsteher Jonathan lässt nur ordentliche Leute rein
-            </p>
-          </div>
-        </div>
-        <div class="col-span-8 md:col-span-2 text-center">
-          <div class="card bg-white px-2 py-2">
-            <img
-              src="https://avatars.githubusercontent.com/u/20771653?v=4"
-              alt=""
-              class="w-16 rounded-full mx-auto"
-            />
-            <h2 class="font-bold text-lg">Jonathan Martz</h2>
-            <p class="text-sm">
-              Türsteher Jonathan lässt nur ordentliche Leute rein
-            </p>
-          </div>
-        </div>
-        <div class="col-span-8 md:col-span-2 text-center">
-          <div class="card bg-white px-2 py-2">
-            <img
-              src="https://avatars.githubusercontent.com/u/20771653?v=4"
-              alt=""
-              class="w-16 rounded-full mx-auto"
-            />
-            <h2 class="font-bold text-lg">Jonathan Martz</h2>
-            <p class="text-sm">
-              Türsteher Jonathan lässt nur ordentliche Leute rein
-            </p>
-          </div>
-        </div>
-      </div>
+      <team-list></team-list>
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: "Homepage",
+<script setup>
+import TeamList from "../components/team/list.vue";
+import IconBar from "../components/icon/bar.vue";
+import NoteWhatsapp from "../components/note/whatsapp.vue";
+
+let call = function (number) {
+  location.href = "tel:" + number;
 };
 </script>

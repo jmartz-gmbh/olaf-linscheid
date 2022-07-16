@@ -13,10 +13,10 @@
     "@fortawesome/vue-fontawesome": "^3.0.0-5",
     "less": "^4.1.2",
     "less-loader": "^11.0.0",
+    "pinia": "^2.0.16",
     "plausible-tracker": "^0.3.5",
     "vue": "^3.2.25",
-    "vue-router": "^4.0.15",
-    "vuex": "^4.0.2"
+    "vue-router": "^4.0.15"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
